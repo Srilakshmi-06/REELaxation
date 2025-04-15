@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>REELaxation Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <div class="login-container">
+    <h2>Welcome to REELaxation 😌</h2>
+    <input type="text" id="username" placeholder="Enter username" />
+    <br>
+    <input type="password" id="password" placeholder="Enter password" />
+    <button onclick="login()">Login</button>
+    <p id="login-error" class="error-msg"></p>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // Fake user check (replace with backend later)
+      if (user === "sri"|| user== "pramee" || user == "vaishu" || user == "santhanu" && pass === "1234") {
+        localStorage.setItem("user", user);
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("login-error").innerText = "Invalid credentials.";
+      }
+    }
+  </script>
+</body>
+</html>
