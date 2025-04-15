@@ -9,7 +9,12 @@
   <div class="dashboard-container">
     <h1>🎉 Welcome to REELaxation Dashboard</h1>
     <p id="user-greet"></p>
-
+    <div id="quote-box" style="text-align:center; margin: 20px; font-style: italic; font-size: 1.2em;">
+      <p id="quote">Loading a calming thought...</p>
+      <button onclick="showRandomQuote()" style="padding: 10px 20px; margin-top: 10px; border: none; background-color: #00bfff; color: white; border-radius: 5px; cursor: pointer;">
+        New Quote ✨
+      </button>
+    </div>
     <div class="dashboard-buttons">
       <button onclick="goToSection('reels')">🎥 Watch Reels</button>
       <button onclick="goToSection('games')">🎮 Play Games</button>
@@ -24,6 +29,27 @@
     } else {
       document.getElementById("user-greet").innerText = `Hello, ${user}!`;
     }
+
+     const quotes = [
+  "Take a deep breath and let it all go.",
+  "Relax. Nothing is under control.",
+  "You’re doing better than you think.",
+  "A calm mind brings inner strength and self-confidence.",
+  "Slow down. You’re doing fine.",
+  "Peace begins with a smile.",
+  "It’s okay to rest. It’s okay to breathe.",
+  "Your mind will answer most questions if you learn to relax.",
+  "Sometimes doing nothing is the best thing you can do.",
+  "Your peace is more important than their approval."
+];
+
+function showRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const quoteElement = document.getElementById("quote");
+  if (quoteElement) {
+    quoteElement.textContent = quotes[randomIndex];
+  }
+}
 
     function goToSection(section) {
       if (section === "reels") {
