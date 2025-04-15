@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Games - Reelaxation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <h2>🎮 Pick a Game to Relax</h2>
+    <button onclick="startGame('emoji')">😊 Emoji Clicker</button>
+    <button onclick="startGame('memory')">🧠 Memory Match</button>
+    <button onclick="startGame('bubble')">🫧 Bubble Pop</button>
+    <button onclick="goBack()">⬅️ Back to Dashboard</button>
+
+    <div id="game-area" style="margin-top: 20px;"></div>
+  </div>
+
+  <script src="games.js"></script> <!-- Contains your game functions -->
+  <script>
+    function startGame(game) {
+      document.getElementById("game-area").innerHTML = ""; // Reset area
+      if (game === 'emoji') startEmojiGame();
+      else if (game === 'memory') startMemoryGame();
+      else if (game === 'bubble') startBubblePop();
+    }
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>

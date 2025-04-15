@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reelaxation Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>🎉 Welcome to Reelaxation Dashboard</h1>
+    <p id="user-greet"></p>
+
+    <div class="dashboard-buttons">
+      <button onclick="goToSection('reels')">🎥 Watch Reels</button>
+      <button onclick="goToSection('games')">🎮 Play Games</button>
+      <button onclick="logout()">🚪 Logout</button>
+    </div>
+  </div>
+
+  <script>
+    const user = localStorage.getItem("user");
+    if (!user) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("user-greet").innerText = `Hello, ${user}!`;
+    }
+
+    function goToSection(section) {
+      if (section === "reels") {
+        window.location.href = "reels.html";
+      } else if (section === "games") {
+        window.location.href = "games.html";
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("user");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

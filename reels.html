@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Watch Reels - Reelaxation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <h2>🎥 Pick a Mood & Relax</h2>
+    <div>
+      <button onclick="showVideos('happy')">😊 Happy</button>
+      <button onclick="showVideos('calm')">🧘 Calm</button>
+      <button onclick="showVideos('motivated')">💪 Motivated</button>
+    </div>
+
+    <div id="video-container" style="margin-top: 20px;"></div>
+    <br />
+    <button onclick="goBack()">⬅️ Back to Dashboard</button>
+  </div>
+
+  <script>
+    const videos = {
+      happy: [
+        "https://www.youtube.com/embed/ZbZSe6N_BXs",
+        "https://www.youtube.com/embed/syFZfO_wfMQ"
+      ],
+      calm: [
+        "https://www.youtube.com/embed/2OEL4P1Rz04",
+        "https://www.youtube.com/embed/lFcSrYw-ARY"
+      ],
+      motivated: [
+        "https://www.youtube.com/embed/UNQhuFL6CWg",
+        "https://www.youtube.com/embed/Ov7cRPfu1h4"
+      ]
+    };
+
+    function showVideos(mood) {
+      const container = document.getElementById("video-container");
+      container.innerHTML = "";
+      videos[mood].forEach(url => {
+        const iframe = document.createElement("iframe");
+        iframe.src = url;
+        iframe.width = "300";
+        iframe.height = "200";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.style.margin = "10px";
+        container.appendChild(iframe);
+      });
+    }
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>
