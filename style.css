@@ -1,19 +1,28 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f8ff;
+  background: linear-gradient(135deg, #c2e9fb, #f9f3ff);
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f0f8ff;
-  margin: 0;
-  padding: 0;
-}
+#quote-box {
+  background: linear-gradient(135deg, #c2e9fb, #f9f3ff);
+  color: #333;
 
+  border-left: 4px solid #00bfff;
+  padding: 15px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+#quote-box button:hover {
+  background-color: #009acd;
+}
 .auth-page {
   display: flex;
   justify-content: center;
@@ -44,7 +53,9 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
-
+button:hover {
+  background-color: rgb(72, 110, 131);
+}
 .error-msg {
   color: red;
   margin-top: 5px;
