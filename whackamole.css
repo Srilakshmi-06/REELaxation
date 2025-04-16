@@ -1,0 +1,31 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 20px;
+  }
+  
+  .grid {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #999;
+    background-color: #e0e0e0;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+  }
+  
+  .mole {
+    background-color: #ff6f61;
+    background-image: url('https://e7.pngegg.com/pngimages/447/597/png-clipart-whac-a-mole-crappy-flappy-moles-android-video-game-android-mammal-carnivoran.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
